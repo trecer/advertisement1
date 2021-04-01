@@ -1,0 +1,11 @@
+{% load testapp_tags %}
+
+<div class="list-group">
+    {% get_list_categories as categories %}
+    {% for item in categories %}
+      <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}     <span class="badge bg-primary rounded-pill">{{ item.cnt }}</span></a>
+
+    {% endfor %}
+</div>
+<br>
+<!--{% show_categories %}-->
